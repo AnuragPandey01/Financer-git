@@ -3,6 +3,7 @@ package com.anuragpandey.financer.ui.expenseData;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,9 +12,11 @@ import com.anuragpandey.financer.R;
 import com.anuragpandey.financer.model.ExpenseData;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ListViewHolder> {
+    public RecyclerAdapter(ArrayList<ExpenseData> list) {
+        this.list = list;
+    }
 
     ArrayList<ExpenseData> list;
 
@@ -26,7 +29,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ListVi
 
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
-
+        holder.name.setText(list.get(position).getExpenseName());
     }
 
     @Override
@@ -35,9 +38,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ListVi
     }
 
     public static class ListViewHolder extends RecyclerView.ViewHolder{
+        TextView name;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
+            name = itemView.findViewById(R.id.tv_expense_name);
         }
     }
 }

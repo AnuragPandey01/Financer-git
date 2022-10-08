@@ -2,65 +2,56 @@ package com.anuragpandey.financer.ui.expenseData;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.anuragpandey.financer.R;
+import com.anuragpandey.financer.model.ExpenseData;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentNeeds#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class FragmentNeeds extends Fragment {
+    private static final String TAG = "FragmentNeeds";
+    RecyclerView recyclerView;
+    ArrayList<ExpenseData> list = new ArrayList<>();
+    RecyclerAdapter adapter = new RecyclerAdapter(list);
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_needs, container, false);
+        recyclerView = view.findViewById(R.id.rv_needs);
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+        view.findViewById(R.id.bt_needs_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_fragmentNeeds_to_wantsFragment);
+            }
+        });
 
-    public FragmentNeeds() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentNeeds.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentNeeds newInstance(String param1, String param2) {
-        FragmentNeeds fragment = new FragmentNeeds();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        return view;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        list.add(new ExpenseData("Rent"));
+        list.add(new ExpenseData("Maintaince"));
+        list.add(new ExpenseData("Electricity"));
+        list.add(new ExpenseData("Rent"));
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_needs, container, false);
     }
 }

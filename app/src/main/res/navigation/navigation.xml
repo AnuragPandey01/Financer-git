@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation.xml">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/introFragment">
 
+    <fragment
+        android:id="@+id/fragmentBasicData"
+        android:name="com.anuragpandey.financer.FragmentBasicData"
+        android:label="fragment_basic_data"
+        tools:layout="@layout/fragment_basic_data" >
+        <action
+            android:id="@+id/action_fragmentBasicData_to_fragmentNeeds"
+            app:destination="@id/fragmentNeeds" />
+    </fragment>
+    <fragment
+        android:id="@+id/luxuryFragment"
+        android:name="com.anuragpandey.financer.ui.expenseData.LuxuryFragment"
+        android:label="fragment_luxury"
+        tools:layout="@layout/fragment_luxury" />
+    <fragment
+        android:id="@+id/fragmentNeeds"
+        android:name="com.anuragpandey.financer.ui.expenseData.FragmentNeeds"
+        android:label="fragment_needs"
+        tools:layout="@layout/fragment_needs" >
+        <action
+            android:id="@+id/action_fragmentNeeds_to_wantsFragment"
+            app:destination="@id/wantsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.anuragpandey.financer.ui.IntroFragment"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/action_introFragment_to_fragmentBasicData"
+            app:destination="@id/fragmentBasicData" />
+    </fragment>
+    <fragment
+        android:id="@+id/wantsFragment"
+        android:name="com.anuragpandey.financer.ui.expenseData.WantsFragment"
+        android:label="fragment_wants"
+        tools:layout="@layout/fragment_wants" >
+        <action
+            android:id="@+id/action_wantsFragment_to_luxuryFragment"
+            app:destination="@id/luxuryFragment" />
+    </fragment>
 </navigation>
