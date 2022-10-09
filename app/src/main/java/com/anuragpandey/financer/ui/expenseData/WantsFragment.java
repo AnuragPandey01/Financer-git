@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.anuragpandey.financer.R;
+import com.anuragpandey.financer.model.DataHolder;
 import com.anuragpandey.financer.model.ExpenseData;
 
 import java.util.ArrayList;
@@ -27,11 +28,15 @@ public class WantsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_wants, container, false);
         recyclerView = view.findViewById(R.id.rv_wants);
-        RecyclerAdapter adapter = new RecyclerAdapter(list);
+        RecyclerAdapterWants adapter = new RecyclerAdapterWants(list);
 
         view.findViewById(R.id.bt_wants_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                for(int i = 0; i<15; i++){
+                    DataHolder.wantsTotalAmount += RecyclerAdapterWants.amountList[i];
+                    Log.d("bitch", String.valueOf(DataHolder.wantsTotalAmount));
+                }
                 Navigation.findNavController(view).navigate(R.id.action_wantsFragment_to_luxuryFragment);
             }
         });
@@ -44,9 +49,8 @@ public class WantsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        list.add(new ExpenseData("sdsddsds"));
-        list.add(new ExpenseData("dsd"));
-        list.add(new ExpenseData("Elecdsdstricity"));
-        list.add(new ExpenseData("dsds"));
+        list.add(new ExpenseData("Travelling"));
+        list.add(new ExpenseData("Electricity Bill"));
+        list.add(new ExpenseData("Internet"));
     }
 }

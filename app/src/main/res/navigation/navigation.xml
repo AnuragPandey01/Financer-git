@@ -18,7 +18,11 @@
         android:id="@+id/luxuryFragment"
         android:name="com.anuragpandey.financer.ui.expenseData.LuxuryFragment"
         android:label="fragment_luxury"
-        tools:layout="@layout/fragment_luxury" />
+        tools:layout="@layout/fragment_luxury" >
+        <action
+            android:id="@+id/action_luxuryFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentNeeds"
         android:name="com.anuragpandey.financer.ui.expenseData.FragmentNeeds"
@@ -46,4 +50,9 @@
             android:id="@+id/action_wantsFragment_to_luxuryFragment"
             app:destination="@id/luxuryFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.anuragpandey.financer.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
 </navigation>

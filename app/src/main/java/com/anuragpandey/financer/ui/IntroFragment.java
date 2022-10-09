@@ -20,7 +20,7 @@ public class IntroFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_intro, container, false);
-        view.findViewById(R.id.bt_run).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.iv_run).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_introFragment_to_fragmentBasicData);

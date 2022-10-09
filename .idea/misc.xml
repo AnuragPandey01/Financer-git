@@ -5,15 +5,19 @@
       <map>
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/drawable/ed_box.xml" value="0.217" />
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/drawable/ic_launcher_background.xml" value="0.148" />
+        <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/drawable/tv_box.xml" value="0.148" />
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/activity_login.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/activity_registor.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/add_data.xml" value="0.2046875" />
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/expense_data_itemview.xml" value="0.20572916666666666" />
-        <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/fragment_basic_data.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/footer.xml" value="0.2046875" />
+        <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/fragment_basic_data.xml" value="0.2" />
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/fragment_info.xml" value="0.2" />
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/fragment_intro.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/fragment_luxury.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/fragment_needs.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/fragment_result.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/pandey anurag/AndroidStudioProjects/Financer/app/src/main/res/layout/fragment_wants.xml" value="0.18802083333333333" />
       </map>
     </option>
